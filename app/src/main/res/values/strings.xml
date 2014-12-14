@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_section1">Test Section 1</string>
+    <string name="title_section2">Test Section 2</string>
+    <string name="title_section3">Test Section 3</string>
+
+    <string name="app_name">Pokedex</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+    
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item>Pokedex</item>
+        <item>Weakness Analysis</item>
+        <item>Battle Analysis</item>
+        <item>Region Maps</item>
+        <item>Note Taker</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string name="attack_defense_prompt">Attack?</string>
+    <string-array name="attack_defense">
+        <item>Attack</item>
+        <item>Defense</item>
+    </string-array>
+
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_pokedex</item>
+        <item>@drawable/ic_weakness_analysis</item>
+        <item>@drawable/ic_battle_analysis</item>
+        <item>@drawable/ic_region_maps</item>
+        <item>@drawable/ic_note_taker</item>
+        <item>@android:drawable/ic_menu_preferences</item>
+    </array>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+</resources>
