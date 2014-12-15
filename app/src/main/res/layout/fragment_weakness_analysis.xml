@@ -14,6 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
+            android:entries="@array/pokemon_test_types"
 
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -25,12 +26,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
             android:entries="@array/attack_defense"
-            android:prompt="@string/attack_defense_prompt"
 
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-
         </LinearLayout>
 
 

@@ -20,6 +20,11 @@
         <item>Settings</item>
     </string-array>
 
+    <string-array name="pokemon_test_types">
+        <item>Normal</item>
+        <item>Flying</item>
+    </string-array>
+
     <string name="attack_defense_prompt">Attack?</string>
     <string-array name="attack_defense">
         <item>Attack</item>
