@@ -121,6 +121,7 @@ public class MainActivity extends Activity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
+    //Check whether fragements really need to be recreated
     private void displayFragment(int position){
         Fragment fragment = null;
         switch (position) {
@@ -162,6 +163,9 @@ public class MainActivity extends Activity {
     @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
+
+        //Can add logic here to chosse which items to setVisible
+        //menu.findIten(R.id).setVisible
 		return true;
 	}
 
@@ -175,10 +179,12 @@ public class MainActivity extends Activity {
         // Handle action bar actions click
         switch (item.getItemId()) {
             case R.id.action_settings:
-                return true;
+                displayFragment(5);
+                break;
             default:
-                return super.onOptionsItemSelected(item);
+                break;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     /* *
