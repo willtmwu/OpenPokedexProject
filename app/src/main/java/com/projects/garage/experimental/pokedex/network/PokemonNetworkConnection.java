@@ -45,12 +45,9 @@ public class PokemonNetworkConnection {
             @Override
             public void success(String htmlTypeChart, Response response) {
                 //System.out.println(htmlTypeChart); // Need to be loaded back into a matrix form, Table Class Guava
-                JSONArray jsonArray = PokemonTypeChartParser.htmlTypeChartParser(htmlTypeChart);
+                PokemonTypeChartTable pokt = new PokemonTypeChartTable(htmlTypeChart);
 
-                PokemonTypeChartTable pokt = new PokemonTypeChartTable();
-                Table typeChartTable = pokt.parseToTable(jsonArray);
-
-                //pass reference back to main
+                //pass reference back to main, somehow
                 //Or object creation, and manipulation instead of libs
             }
 
@@ -61,8 +58,8 @@ public class PokemonNetworkConnection {
         });
     }
 
-    /* Extracts the html body (webpage) of the response
-    * and extracts the html Pokemon type chart.
+    /*  Parses the html body (webpage) of the response
+    *   and extracts the html Pokemon type chart.
     * */
     static class HtmlTypeChartConverter implements Converter {
 

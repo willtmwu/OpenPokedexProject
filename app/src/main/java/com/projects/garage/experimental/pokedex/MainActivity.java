@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 
+import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 
@@ -36,6 +37,9 @@ import com.projects.garage.experimental.pokedex.database.PokemonTypeChartTable;
 import com.projects.garage.experimental.pokedex.network.PokemonNetworkConnection;
 
 public class MainActivity extends Activity {
+
+    public static final String LOG_TAG = "experimental.pokedex";
+
     private CharSequence mDrawerTitle;  // nav drawer title
     private CharSequence mTitle;        // used to store app title
 
@@ -50,9 +54,6 @@ public class MainActivity extends Activity {
     private TypedArray navMenuIcons;
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter navAdapter;
-
-    //Maintain a reference to the type chart
-    PokemonTypeChartTable pokemonTable = new PokemonTypeChartTable();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -139,8 +140,23 @@ public class MainActivity extends Activity {
         }
 
         if (fragment != null) {
-            FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
+            //FragmentManager fragmentManager = getFragmentManager();
+            //fragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit();
+
+            Bundle data = new Bundle();
+
+            //Backstack logic
+            String backStateName = fragment.getClass().getName();
+
+            FragmentManager manager = getFragmentManager();
+            boolean fragmentPopped = manager.popBackStackImmediate(backStateName, 0);
+
+            if(!fragmentPopped){
+                FragmentTransaction ft = manager.beginTransaction();
+                ft.replace(R.id.frame_container, fragment);
+                ft.addToBackStack(backStateName);
+                ft.commit();
+            }
 
             // update selected item and title, then close the drawer
             mDrawerList.setItemChecked(position, true);
