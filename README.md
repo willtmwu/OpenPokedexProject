@@ -6,4 +6,6 @@ No quality garanteed!
 
 -- Edit
 
-Abandoning project, the useful java code will be moved out to examples
+Will be restarting the project mid-year. using this api
+http://pokeapi.co/
+^credits to the author
